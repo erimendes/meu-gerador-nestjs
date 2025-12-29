@@ -1,17 +1,14 @@
-[project]
-name = "meu-gerador-nestjs"
+[tool.poetry]
+name = "gerador-ia"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "erimendes",email = "eri.mendes32@gmail.com"}
-]
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "google-generativeai (>=0.8.6,<0.9.0)"
-]
+description = "Gerador automático de código NestJS"
+authors = ["Seu Nome"]
+package-mode = false  # <--- ESTA LINHA CORRIGE O ERRO
 
+[tool.poetry.dependencies]
+python = "^3.11"
+google-generativeai = "^0.7.2"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
