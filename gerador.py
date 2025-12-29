@@ -6,7 +6,8 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 print("🧠 IA gerando código...")
 
 try:
-    model = genai.GenerativeModel("gemini-pro")  # ✅ MODELO COMPATÍVEL
+    # Versão estável e com alta cota para contas Pro
+    model = genai.GenerativeModel('gemini-1.5-pro-latest')
     response = model.generate_content(
         "Gere um exemplo simples de controller NestJS em TypeScript"
     )
