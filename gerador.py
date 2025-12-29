@@ -10,7 +10,7 @@ if not api_key:
     sys.exit(1)
 
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 def build_app():
     try:
