@@ -1,0 +1,40 @@
+name: Gerador NestJS com IA
+on:
+  push:
+    paths:
+      - 'meu_prompt.txt'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Instalar Python e Poetry
+        run: |
+          pipx install poetry
+          pipx install uv
+          
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'poetry'
+            
+      - name: Instalar Dependências
+        run: poetry install
+
+      - name: Executar Gerador de IA
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: poetry run python gerador.py
+
+      - name: Commit e Push dos Ficheiros Gerados
+        run: |
+          git config --global user.name 'AI-Bot-Gerador'
+          git config --global user.email 'ai-bot@github.com'
+          git add .
+          # Só faz commit se houver mudanças para evitar erros
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 App NestJS gerada pela IA" && git push)

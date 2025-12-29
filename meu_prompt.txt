@@ -1,0 +1,3 @@
+Crie uma aplicação NestJS inicial com um CRUD de 'Tarefas' (Tasks). 
+Inclua um controller, um service e um módulo. 
+O modelo deve ter: id, título e descrição.
