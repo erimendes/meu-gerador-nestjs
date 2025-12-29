@@ -7,7 +7,7 @@ print("🧠 IA gerando código...")
 
 try:
     # Versão estável e com alta cota para contas Pro
-    model = genai.GenerativeModel('gemini-2.0-flash')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     response = model.generate_content(
         "Gere um exemplo simples de controller NestJS em TypeScript"
     )
