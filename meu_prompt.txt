@@ -1,1 +1,1 @@
-Crie um projeto NestJS completo com CRUD de Produtos. Gere os ficheiros na raiz do repositório.
+Crie um projeto NestJS básico com um arquivo package.json na raiz.
